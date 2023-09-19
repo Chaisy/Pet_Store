@@ -1,0 +1,135 @@
+(OTM Customer, Order)
+(OTM Role, Customer)
+(OTO Cart)
+Customer:
++ Id:             int       <pk> 
++ Nickname:       string
++ Password:       string
++ Email:          string
++ RoleId:                   <fk>
+
+(OTM Role, Customer)
+Role:
++ Id              int       <pk>
++ Nickname:       string
+
+(MTM Food)
+(MTM Toys)
+(MTM Medicine)
+(MTM Ammunition)
+(MTM Homes)
+(MTM Dishes)
+(MTM Fillers)
+(MTM Grooming)
+(OTO Customer)
+Cart:
++ Id:             int        <pk>
++ CustomerId                 <fk>
+
+(OTM Customer, Order)
+(MTM Food)
+(MTM Toys)
+(MTM Medicine)
+(MTM Homes)
+(MTM Dishes)
+(MTM Ammunition)
+(MTM Fillers)
+(MTM Grooming)
+Order:
++ Id:             int        <pk> 
++ AmoundPrice:    int
++ FoodId:                    <fk>
++ ToysId:                    <fk>
++ MedicineId:                <fk>
++ HomesId:                   <fk>
++ DishesId:                  <fk>
++ AmmunitionId:              <fk>
++ FillersId:                 <fk>
++ GroomingId:                <fk>
++ CustomerId:                <fk> 
+
+
+(OTM FoodType, Food)
+(OTM Animal, Food)
+(MTM Cart)
+(MTM Order)
+Food:
++ Id:              int       <pk> 
++ Title:           string
++ FoodTypeId:                <fk>
++ AnimalId:                  <fk>
+
+(OTM ToysType, Toys)
+(OTM Animal, Toys)
+(MTM Cart)
+(MTM Order)
+Toys:
++ Id:              int       <pk> 
++ Title:           string
++ ToysTypeId:                <fk>
++ AnimalId:                  <fk>
+
+(OTM MedicineType, Medicine)
+(OTM Animal, Medicine)
+(MTM Cart)
+(MTM Order)
+Medicine:
++ Id:              int       <pk> 
++ Title:           string
++ MedicineTypeId:            <fk>
++ AnimalId:                  <fk>
+
+(OTM DishesType, Dishes)
+(OTM Animal, Dishes)
+(MTM Cart)
+(MTM Order)
+Dishes:
++ Id:              int       <pk> 
++ Title:           string
++ DishesTypeId:              <fk>
++ AnimalId:                  <fk>
+
+(OTM HomesType, Homes)
+(OTM Animal, Homes)
+(MTM Cart)
+(MTM Order)
+Homes:
++ Id:              int       <pk> 
++ Title:           string
++ HomesTypeId:               <fk>
++ AnimalId:                  <fk>
+
+(OTM AmmunitionType, Ammunition)
+(OTM Animal, Ammunition)
+(MTM Cart)
+(MTM Order)
+Ammunition:
++ Id:              int       <pk> 
++ Title:           string
++ AmmunitionTypeId:          <fk>
++ AnimalId:                  <fk>
+
+(OTM FillersType, Fillers)
+(OTM Animal, Fillers)
+(MTM Cart)
+(MTM Order)
+Fillers:
++ Id:              int       <pk> 
++ Title:           string
++ FillersTypeId:             <fk>
++ AnimalId:                  <fk>
+
+(OTM GroomingType, Grooming)
+(OTM Animal, Grooming)
+(MTM Cart)
+(MTM Order)
+Grooming:
++ Id:              int       <pk> 
++ Title:           string
++ GroomingTypeId:            <fk>
++ AnimalId:                  <fk>
+
+
+
+
+
