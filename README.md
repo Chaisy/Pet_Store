@@ -6,4 +6,4 @@
 [-->](functional_requirements.txt)
 
 ## Entities
-[-->](entities.txt)
+[-->](table_structure.txt)
