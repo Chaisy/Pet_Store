@@ -13,39 +13,31 @@ Role:
 + Id              int       <pk>
 + Nickname:       varchar
 
-(MTM Food)
-(MTM Toys)
-(MTM Medicine)
-(MTM Ammunition)
-(MTM Homes)
-(MTM Dishes)
-(MTM Fillers)
-(MTM Grooming)
+(MTM Good)
 (OTO Customer)
 Cart:
 + Id:             int        <pk>
 + CustomerId                 <fk>
 
+(MTM Customer)
+Coupon:
++ Id:             int        <pk>
++ Sale            int
+
+
+(OTM Customer, Logging)
+Logging:
++id              int        <pk>
++CustomerId                 <fk>
+Action           varchar
+
 (OTM Customer, Order)
-(MTM Food)
-(MTM Toys)
-(MTM Medicine)
-(MTM Homes)
-(MTM Dishes)
-(MTM Ammunition)
-(MTM Fillers)
-(MTM Grooming)
+(MTM Good)
 Order:
++ date:           Date
 + Id:             int        <pk> 
 + AmoundPrice:    int
-+ FoodId:                    <fk>
-+ ToysId:                    <fk>
-+ MedicineId:                <fk>
-+ HomesId:                   <fk>
-+ DishesId:                  <fk>
-+ AmmunitionId:              <fk>
-+ FillersId:                 <fk>
-+ GroomingId:                <fk>
++ GoodId:                    <fk>
 + CustomerId:                <fk> 
 
 
@@ -53,81 +45,14 @@ Order:
 (OTM Animal, Food)
 (MTM Cart)
 (MTM Order)
-Food:
+Good:
 + Id:              int       <pk> 
 + Title:           varchar
-+ FoodTypeId:                <fk>
++ GoodTypeId:                <fk>
++Price:             number
++CategoryOgGood:             <fk>
 + AnimalId:                  <fk>
 
-(OTM ToysType, Toys)
-(OTM Animal, Toys)
-(MTM Cart)
-(MTM Order)
-Toys:
-+ Id:              int       <pk> 
-+ Title:           varchar
-+ ToysTypeId:                <fk>
-+ AnimalId:                  <fk>
-
-(OTM MedicineType, Medicine)
-(OTM Animal, Medicine)
-(MTM Cart)
-(MTM Order)
-Medicine:
-+ Id:              int       <pk> 
-+ Title:           varchar
-+ MedicineTypeId:            <fk>
-+ AnimalId:                  <fk>
-
-(OTM DishesType, Dishes)
-(OTM Animal, Dishes)
-(MTM Cart)
-(MTM Order)
-Dishes:
-+ Id:              int       <pk> 
-+ Title:           varchar
-+ DishesTypeId:              <fk>
-+ AnimalId:                  <fk>
-
-(OTM HomesType, Homes)
-(OTM Animal, Homes)
-(MTM Cart)
-(MTM Order)
-Homes:
-+ Id:              int       <pk> 
-+ Title:           varchar
-+ HomesTypeId:               <fk>
-+ AnimalId:                  <fk>
-
-(OTM AmmunitionType, Ammunition)
-(OTM Animal, Ammunition)
-(MTM Cart)
-(MTM Order)
-Ammunition:
-+ Id:              int       <pk> 
-+ Title:           varchar
-+ AmmunitionTypeId:          <fk>
-+ AnimalId:                  <fk>
-
-(OTM FillersType, Fillers)
-(OTM Animal, Fillers)
-(MTM Cart)
-(MTM Order)
-Fillers:
-+ Id:              int       <pk> 
-+ Title:           varchar
-+ FillersTypeId:             <fk>
-+ AnimalId:                  <fk>
-
-(OTM GroomingType, Grooming)
-(OTM Animal, Grooming)
-(MTM Cart)
-(MTM Order)
-Grooming:
-+ Id:              int       <pk> 
-+ Title:           varchar
-+ GroomingTypeId:            <fk>
-+ AnimalId:                  <fk>
 
 
 
