@@ -3,15 +3,15 @@
 (OTO Cart)
 Customer:
 + Id:             int       <pk> 
-+ Nickname:       string
-+ Password:       string
-+ Email:          string
++ Nickname:       varchar
++ Password:       varchar
++ Email:          varchar
 + RoleId:                   <fk>
 
 (OTM Role, Customer)
 Role:
 + Id              int       <pk>
-+ Nickname:       string
++ Nickname:       varchar
 
 (MTM Food)
 (MTM Toys)
@@ -55,7 +55,7 @@ Order:
 (MTM Order)
 Food:
 + Id:              int       <pk> 
-+ Title:           string
++ Title:           varchar
 + FoodTypeId:                <fk>
 + AnimalId:                  <fk>
 
@@ -65,7 +65,7 @@ Food:
 (MTM Order)
 Toys:
 + Id:              int       <pk> 
-+ Title:           string
++ Title:           varchar
 + ToysTypeId:                <fk>
 + AnimalId:                  <fk>
 
@@ -75,7 +75,7 @@ Toys:
 (MTM Order)
 Medicine:
 + Id:              int       <pk> 
-+ Title:           string
++ Title:           varchar
 + MedicineTypeId:            <fk>
 + AnimalId:                  <fk>
 
@@ -85,7 +85,7 @@ Medicine:
 (MTM Order)
 Dishes:
 + Id:              int       <pk> 
-+ Title:           string
++ Title:           varchar
 + DishesTypeId:              <fk>
 + AnimalId:                  <fk>
 
@@ -95,7 +95,7 @@ Dishes:
 (MTM Order)
 Homes:
 + Id:              int       <pk> 
-+ Title:           string
++ Title:           varchar
 + HomesTypeId:               <fk>
 + AnimalId:                  <fk>
 
@@ -105,7 +105,7 @@ Homes:
 (MTM Order)
 Ammunition:
 + Id:              int       <pk> 
-+ Title:           string
++ Title:           varchar
 + AmmunitionTypeId:          <fk>
 + AnimalId:                  <fk>
 
@@ -115,7 +115,7 @@ Ammunition:
 (MTM Order)
 Fillers:
 + Id:              int       <pk> 
-+ Title:           string
++ Title:           varchar
 + FillersTypeId:             <fk>
 + AnimalId:                  <fk>
 
@@ -125,7 +125,7 @@ Fillers:
 (MTM Order)
 Grooming:
 + Id:              int       <pk> 
-+ Title:           string
++ Title:           varchar
 + GroomingTypeId:            <fk>
 + AnimalId:                  <fk>
 
