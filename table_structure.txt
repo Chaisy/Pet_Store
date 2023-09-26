@@ -1,57 +1,64 @@
-(OTM Customer, Order)
-(OTM Role, Customer)
-(OTO Cart)
 Customer:
 + Id:             int       <pk> 
 + Nickname:       varchar
 + Password:       varchar
 + Email:          varchar
-+ RoleId:                   <fk>
++ RoleId:                   <fk Role>
 
-(OTM Role, Customer)
+
 Role:
 + Id              int       <pk>
 + Nickname:       varchar
 
-(MTM Good)
-(OTO Customer)
+
 Cart:
 + Id:             int        <pk>
-+ CustomerId                 <fk>
++ CustomerId                 <fk Customer>
 
-(MTM Customer)
+
 Coupon:
 + Id:             int        <pk>
 + Sale            int
 
+CouponUser:
++ Id:           int           <pk> 
++ CouponId:                   <fk -> Coupon>
++ UserId:                     <fk -> User>
 
-(OTM Customer, Logging)
+
+
 Logging:
 +id              int        <pk>
-+CustomerId                 <fk>
++CustomerId                 <fk Customer>
 Action           varchar
 
-(OTM Customer, Order)
-(MTM Good)
+
 Order:
 + date:           Date
 + Id:             int        <pk> 
 + AmoundPrice:    int
-+ GoodId:                    <fk>
-+ CustomerId:                <fk> 
++ GoodId:                    <fk Good>
++ CustomerId:                <fk Customer> 
 
 
-(OTM FoodType, Food)
-(OTM Animal, Food)
-(MTM Cart)
-(MTM Order)
+
 Good:
 + Id:              int       <pk> 
 + Title:           varchar
-+ GoodTypeId:                <fk>
++ GoodTypeId:                <fk GoodType>
 +Price:             number
-+CategoryOgGood:             <fk>
-+ AnimalId:                  <fk>
++CategoryOgGood:             <fk CategoryOfGood>
++ AnimalId:                  <fk Animal>
+
+GoodBook:
++ Id:           int           <pk> 
++ CartId:                     <fk -> Cart>
++GoodId:                     <fk -> Good>
+
+OrderGood:
++ Id:           int           <pk> 
++ OrderId:                    <fk -> Order>
++ GoodId:                     <fk -> Good>
 
 
 
